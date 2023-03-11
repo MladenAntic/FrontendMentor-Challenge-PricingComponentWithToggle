@@ -1,0 +1,271 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap");
+
+:root {
+  --very-light-grayish-blue: hsl(240, 78%, 98%);
+  --light-grayish-blue: hsl(234, 14%, 74%);
+  --grayish-blue: hsl(233, 13%, 49%);
+  --dark-grayish-blue: hsl(232, 13%, 33%);
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  pointer-events: none;
+}
+
+body {
+  height: 100vh;
+  font-family: "Montserrat", sans-serif;
+  background: var(--very-light-grayish-blue);
+  display: grid;
+  place-items: center;
+  overflow-x: hidden;
+}
+
+img {
+  position: absolute;
+}
+
+.bg-top {
+  top: 0;
+  right: 0;
+}
+
+.bg-bottom {
+  bottom: 0;
+  left: 0;
+}
+
+#main-container {
+  text-align: center;
+  z-index: 10;
+}
+
+.our-pricing {
+  color: var(--dark-grayish-blue);
+  font-size: 2rem;
+}
+
+.billing {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 2.5rem 0;
+}
+
+.billing-cycle {
+  color: var(--light-grayish-blue);
+}
+
+.toggle-billing {
+  width: 4.375rem;
+  height: 2.1875rem;
+  background: linear-gradient(to right, hsl(236, 72%, 79%), hsl(237, 63%, 64%));
+  border-radius: 3.125rem;
+  margin: 0 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  pointer-events: all;
+  cursor: pointer;
+  position: relative;
+}
+
+.toggle-billing:hover {
+    opacity: 0.5;
+}
+
+.toggler {
+  width: 1.875rem;
+  height: 1.875rem;
+  background: var(--very-light-grayish-blue);
+  border-radius: 50%;
+  margin-left: 0.1875rem;
+  position: absolute;
+
+  transform: translateX(115%);
+  transition: 0.25s ease-in-out;
+}
+
+.position {
+  width: 1.875rem;
+  height: 1.875rem;
+  background: transparent;
+  border-radius: 50%;
+  pointer-events: all;
+  cursor: pointer;
+}
+
+.position-annually {
+  margin-left: 0.1563rem;
+}
+
+.position-monthly {
+  margin-right: 0.1563rem;
+}
+
+.plans {
+  display: flex;
+  align-items: center;
+}
+
+.plan {
+  background: #fff;
+  padding: 1.875rem;
+  width: 21.875rem;
+}
+
+.plan:first-of-type {
+  border-radius: 0.625rem 0 0 0.625rem;
+}
+
+.plan:last-of-type {
+  border-radius: 0 0.625rem 0.625rem 0;
+}
+
+.plan:nth-of-type(2) {
+  background: linear-gradient(120deg, hsl(236, 72%, 79%), hsl(237, 63%, 64%));
+  padding: 3.75rem 1.875rem;
+  border-radius: 0.625rem;
+}
+
+.plan:nth-of-type(2) .plan-title,
+.plan:nth-of-type(2) .plan-price,
+.plan:nth-of-type(2) .feature {
+  color: var(--very-light-grayish-blue);
+}
+
+.plan:nth-of-type(2) .learn-more-btn {
+  background: var(--very-light-grayish-blue);
+  color: hsl(237, 63%, 64%);
+}
+
+.plan:nth-of-type(2) .learn-more-btn:hover {
+  background: transparent;
+  color: var(--very-light-grayish-blue);
+  outline: 0.0625rem solid var(--very-light-grayish-blue);
+}
+
+.plan-title {
+  color: var(--dark-grayish-blue);
+}
+
+.plan-price {
+  font-size: 4rem;
+  color: var(--dark-grayish-blue);
+  margin: 1.25rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dollar {
+  font-size: 2.5rem;
+  margin-right: 0.3125rem;
+}
+
+.features {
+  list-style: none;
+}
+
+.feature {
+  border-top: 0.0625rem solid var(--light-grayish-blue);
+  margin-bottom: 1.25rem;
+  padding-top: 1.25rem;
+  color: var(--grayish-blue);
+}
+
+.features .feature:last-of-type {
+  border-bottom: 0.0625rem solid var(--light-grayish-blue);
+  padding-bottom: 1.25rem;
+  margin-bottom: 2.1875rem;
+}
+
+.learn-more-btn {
+  text-decoration: none;
+  text-transform: uppercase;
+  background: linear-gradient(to right, hsl(236, 72%, 79%), hsl(237, 63%, 64%));
+  color: var(--very-light-grayish-blue);
+  display: block;
+  width: 100%;
+  padding: 0.625rem 0;
+  border-radius: 0.3125rem;
+  pointer-events: all;
+  cursor: pointer;
+}
+
+.learn-more-btn:hover {
+  background: transparent;
+  color: hsl(237, 63%, 64%);
+  outline: 0.0625rem solid hsl(237, 63%, 64%);
+}
+
+@media screen and (max-width: 768px) {
+  .bg-top {
+    top: -5%;
+    right: -30%;
+    position: fixed;
+  }
+
+  .bg-bottom {
+    display: none;
+  }
+
+  #main-container {
+    width: 85%;
+    padding: 4.6875rem 0;
+  }
+
+  .billing {
+    margin-bottom: 6.25rem;
+  }
+
+  .plan {
+    width: 100%;
+  }
+
+  .plan:first-of-type {
+    border-radius: 0.625rem;
+  }
+
+  .plan:nth-of-type(2) {
+    margin: 2.5rem 0;
+    padding: 1.875rem;
+  }
+
+  .plan:last-of-type {
+    border-radius: 0.625rem;
+  }
+
+  .plans {
+    flex-direction: column;
+  }
+}
+
+@media screen and (width: 280px) {
+    .plan-price {
+        font-size: 3rem;
+    }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1125px) {
+    #main-container {
+        width: 90%;
+    }
+
+    .plans {
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .plan {
+        width: 34%;
+    }
+
+    .plan-price {
+        font-size: 3rem;
+    }
+}
